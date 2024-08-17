@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental Clinic Chatbot</title>
+    <title>AI Scheduling Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,7 +33,7 @@
         }
 
         #chatHeader {
-            background-color: #4CAF50;
+            background-color: #996FD6; /* Main color */
             color: white;
             padding: 10px;
             text-align: center;
@@ -48,14 +49,15 @@
 
         .user-message {
             text-align: right;
-            color: blue;
+            /* color: #996FD6; Main color */
+            color: #800080; /* Main color */
             margin: 5px;
             word-wrap: break-word;
         }
 
         .bot-message {
             text-align: left;
-            color: green;
+            color: #65439C; /* Darker shade */
             margin: 5px;
             word-wrap: break-word;
         }
@@ -68,7 +70,7 @@
         .bot-buttons button {
             margin-right: 5px;
             padding: 5px 10px;
-            background-color: #4CAF50;
+            background-color: #996FD6; /* Main color */
             color: white;
             border: none;
             border-radius: 4px;
@@ -76,7 +78,7 @@
         }
 
         .bot-buttons button:hover {
-            background-color: #45a049;
+            background-color: #7D59B1; /* Darker shade for hover */
         }
 
         #userInput,
@@ -92,19 +94,19 @@
         }
 
         #sendButton {
-            background-color: #4CAF50;
+            background-color: #996FD6; /* Main color */
             color: white;
             border: none;
             cursor: pointer;
         }
 
         #sendButton:hover {
-            background-color: #45a049;
+            background-color: #7D59B1; /* Darker shade for hover */
         }
 
         /* Error message styling */
         #error-message {
-            color: red;
+            color: #D696F6; /* Lighter shade for error */
             font-weight: bold;
             margin: 5px;
             display: none;
@@ -117,17 +119,20 @@
             right: 20px;
             width: 60px;
             height: 60px;
-            background-color: #4CAF50;
+            background-color: #996FD6; /* Main color */
             color: white;
             border: none;
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             font-size: 24px;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         #helpButton:hover {
-            background-color: #45a049;
+            background-color: #7D59B1; /* Darker shade for hover */
         }
     </style>
 </head>
@@ -135,7 +140,7 @@
 <body>
     <!-- Chat container -->
     <div id="chatContainer">
-        <div id="chatHeader">Dental Clinic Chatbot</div>
+        <div id="chatHeader">AI Scheduling Assistant</div>
         <div id="chatbox"></div>
         <div id="error-message"></div>
         <input type="text" id="userInput" placeholder="Type a message...">
@@ -143,7 +148,9 @@
     </div>
 
     <!-- Help button -->
-    <button id="helpButton" onclick="toggleChat()">?</button>
+    <button id="helpButton" onclick="toggleChat()">
+        <i class="fas fa-headset"></i> <!-- Support icon -->
+    </button>
 
     <script>
         // Toggle chat visibility
